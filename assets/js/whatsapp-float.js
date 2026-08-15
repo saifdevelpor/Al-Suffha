@@ -1,0 +1,1 @@
+(function(){if(document.querySelector('.whatsapp-float'))return;var a=document.createElement('a');a.className='whatsapp-float';a.href='https://wa.me/923272000339';a.target='_blank';a.rel='noopener';a.setAttribute('aria-label','Chat with Al Suffha Quran Academy on WhatsApp');a.innerHTML='<i class="bi bi-whatsapp"></i>';document.body.appendChild(a)}());
