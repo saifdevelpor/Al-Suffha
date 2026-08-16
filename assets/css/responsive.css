@@ -65,3 +65,67 @@ img { max-width: 100%; }
   .plan-card-featured { transform: none !important; }
   .premium-footer .row > div { margin-bottom: 8px; }
 }
+
+/* Responsive refinements for the shared Al Suffha design system */
+@media (max-width: 1199px) {
+  .q-nav { gap: 3px; }
+  .q-nav a { padding-inline: 10px; }
+  .q-section { padding-block: 82px; }
+}
+
+@media (max-width: 991px) {
+  body.quran-site { padding-top: 77px; }
+  .q-header { min-height: 77px; }
+  .q-header .container { min-height: 58px; }
+  .q-mobile-toggle {
+    border-color: var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
+  }
+  .q-mobile-toggle:hover { background: var(--surface-soft); color: var(--primary-light); }
+  .q-mobile-menu { z-index: 1200; }
+  .q-mobile-menu__overlay { background: rgba(3, 27, 66, .72); backdrop-filter: blur(3px); }
+  .q-mobile-menu__panel { padding: 26px 22px; box-shadow: -18px 0 50px rgba(3, 27, 66, .18); }
+  .q-mobile-menu nav a { border-color: var(--border); border-radius: var(--radius-sm); margin-block: 3px; transition: background-color var(--transition), color var(--transition); }
+  .q-mobile-menu nav a:hover { background: var(--surface-soft); color: var(--primary-light); }
+  .q-mobile-menu nav a.active { background: var(--primary); color: var(--surface); }
+  .q-page-hero { padding-block: 80px 70px; }
+  .q-section { padding-block: 72px; }
+  .q-section-head { margin-bottom: 42px; }
+  .q-form { padding: 30px; }
+}
+
+@media (max-width: 767px) {
+  .container { width: min(100% - 28px, 720px); padding-inline: 0; }
+  .q-section { padding-block: 64px; }
+  .q-page-hero { padding-block: 68px 60px; }
+  .q-section-head { margin-bottom: 34px; }
+  .q-program,
+  .q-info-card,
+  .course-info-card,
+  .plan-card { padding: 26px 22px; }
+  .q-cta,
+  .course-detail-cta,
+  .teacher-cta-box,
+  .support-box { box-shadow: var(--shadow-md); }
+}
+
+@media (max-width: 575px) {
+  body.quran-site { padding-top: 75px; }
+  .q-header { min-height: 75px; }
+  .q-brand { width: 86px; height: 52px; }
+  .q-mobile-toggle { width: 43px; height: 41px; }
+  .q-page-hero h1 { font-size: clamp(36px, 11vw, 45px); }
+  .q-section h2,
+  .q-cta h2 { font-size: clamp(31px, 9vw, 38px); }
+  .q-section { padding-block: 58px; }
+  .q-page-hero { padding-block: 60px 54px; }
+  .q-eyebrow { font-size: 10px; letter-spacing: 1.8px; }
+  .q-button { min-height: 48px; }
+  .q-form { padding: 24px 18px; }
+  .premium-footer-logo { margin-bottom: 12px !important; }
+  .premium-footer h4 { font-size: 18px; }
+  .premium-footer li a,
+  .footer-contact-line { font-size: 13px; }
+}
