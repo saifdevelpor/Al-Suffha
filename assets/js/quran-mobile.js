@@ -58,7 +58,8 @@
   function createPageHeroImages() {
     const hero = document.querySelector('.q-page-hero');
     if (!hero || hero.classList.contains('q-visual-hero')) return;
-    const page = location.pathname.toLowerCase().split('/').pop() || 'index.html';
+    const route = location.pathname.toLowerCase().split('/').pop() || 'index.html';
+    const page = route.includes('.') ? route : route + '.html';
     const images = {
       'about.html': 'assets/img/course-qaida-online.png',
       'courses.html': 'assets/img/course-quran-reading-online.png',
@@ -157,7 +158,9 @@
       islamic:{title:'Islamic Studies Course',tag:'LEARN THE ESSENTIALS',image:'assets/img/course-qaida-online.png',intro:'Age-appropriate Islamic learning that complements a strong Quran education.',items:['Daily duas and Islamic manners','Salah and basic worship','Essential beliefs and values','Simple, engaging explanations'],who:'Children and adults who want to strengthen everyday Islamic knowledge.'}
     };
     const path = location.pathname.toLowerCase();
-    if (path.endsWith('courses.html')) {
+    const route = path.split('/').pop() || 'index.html';
+    const page = route.includes('.') ? route : route + '.html';
+    if (page === 'courses.html') {
       document.querySelectorAll('.q-program').forEach(card => {
         const title = card.querySelector('h3')?.textContent || '';
         const map = title.includes('Qaida') ? 'qaida' : title.includes('Reading') ? 'reading' : title.includes('Tajweed') ? 'tajweed' : title.includes('Hifz') ? 'hifz' : title.includes('Islamic') ? 'islamic' : null;
@@ -170,7 +173,7 @@
         }
       });
     }
-    if (!path.endsWith('course-details.html')) return;
+    if (page !== 'course-details.html') return;
     document.querySelectorAll('.q-nav a.active').forEach(link => link.classList.remove('active'));
     const slug = new URLSearchParams(location.search).get('course') || 'qaida';
     const course = courses[slug] || courses.qaida;
